@@ -1,0 +1,20 @@
+import numpy as np
+
+x_values = np.arange(-4, 0.5, 0.5)
+
+a = 1  
+b = 2  
+c = 3  
+
+def y_function(x):
+    if x > -1:
+        return 5 * (a**2) * x + 3 * b
+    elif x == -1:
+        return 2 * b * c + 3 * x
+    else:
+        return 6 * (x**2) + b - c
+
+y_values = [y_function(x) for x in x_values]
+
+for x, y in zip(x_values, y_values):
+    print(f"x = {x}, y = {y}")
