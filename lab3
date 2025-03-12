@@ -1,0 +1,15 @@
+import math
+
+x = 0.5
+epsilon = 0.001
+
+P = 0
+term = math.sin(x)
+n = 1
+
+while abs(term) >= epsilon:
+    P += term
+    term *= (-math.sin(x) / n)
+    n += 1
+
+print(f"P = {P}")
