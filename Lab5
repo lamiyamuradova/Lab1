@@ -1,0 +1,3 @@
+A = [5, 10, 15, 20, 25] 
+ededi_orta = sum(A) / len(A)
+print(ededi_orta)
