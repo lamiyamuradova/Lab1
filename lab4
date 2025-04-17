@@ -1,0 +1,5 @@
+import random
+
+n = 10
+massiv = [random.uniform(4, 27) for _ in range(n)]
+print(massiv)
