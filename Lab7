@@ -1,0 +1,14 @@
+massiv = [3, 5, 7, 10, 13, 4, 12, 8, 2, 11]
+
+with open("esas_fayl.txt", "w") as f:
+    for eded in massiv:
+        f.write(str(eded) + "\n")
+
+uygun_ededler = [x for x in massiv if 4 < x < 12]
+
+with open("filtrlenmis_fayl.txt", "w") as f:
+    for eded in uygun_ededler:
+        f.write(str(eded) + "\n")
+
+cem = sum(uygun_ededler)
+print("Şərtə uyğun ədədlərin cəmi:", cem)
