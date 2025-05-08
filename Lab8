@@ -1,0 +1,21 @@
+import math
+
+def f(x):
+    return math.sqrt(x * math.tan(x)) - 1
+
+a = 0.0
+b = 0.2
+eps = 1e-5
+
+if f(a) * f(b) >= 0:
+    print("Bu intervallarda kök yoxdur.")
+else:
+    while (b - a) / 2 > eps:
+        c = (a + b) / 2
+        if f(c) == 0:
+            break
+        elif f(a) * f(c) < 0:
+            b = c
+        else:
+            a = c
+    print("Kök təxmini:", (a + b) / 2)
