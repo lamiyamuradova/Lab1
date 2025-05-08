@@ -1,0 +1,29 @@
+import math
+
+def f(x):
+    return math.sqrt(x) * math.tan(x) * (1 - x)
+
+def df(x):
+    if x == 0:
+        return float('inf')  # Avoid division by zero
+    return (0.5 / math.sqrt(x)) * math.tan(x) * (1 - x) + \
+           math.sqrt(x) * (1 / math.cos(x))**2 * (1 - x) - \
+           math.sqrt(x) * math.tan(x)
+
+x0 = 0.1  # İlkin yaxınlıq
+eps = 1e-5
+max_iter = 100
+
+for i in range(max_iter):
+    fx = f(x0)
+    dfx = df(x0)
+    if dfx == 0:
+        print("Törəmə sıfırdır, metod dayandırıldı.")
+        break
+    x1 = x0 - fx / dfx
+    if abs(x1 - x0) < eps:
+        break
+    x0 = x1
+
+print("Təxmini kök:", x1)
+print("Iterasiya sayı:", i+1)
